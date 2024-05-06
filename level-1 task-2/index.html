@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level-1 Task-2</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        #colorbutton {
+            color: black;
+            background-color: bisque;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 10px;
+        }
+
+        .currentTime {
+            color: black;
+            background-color: aqua;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 10px;
+        }
+
+        #add {
+            background-color: aqua;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Level-1 Task-2</h1>
+
+    <p> Basic button that changes its color when clicked</p>
+    <button id="colorbutton">Click me!</button>
+    <script>
+        const button = document.getElementById('colorbutton');
+        button.addEventListener('click', () => {
+            button.style.backgroundColor = 'pink';
+        });
+    </script>
+
+    <p>The button for alert with current time</p>
+    <button class="currentTime">
+        Alert me
+    </button>
+    <script>
+        const clicker2 = document.querySelector(".currentTime")
+        clicker2.addEventListener('click', () => {
+            alert(`Congrat!\n you are live at ${Date()}`)
+        })
+    </script>
+
+    <p><strong>Basic calculation that adds two numbers</strong></p>
+    <input type="number" id="num1"><br><br>
+    <input type="number" id="num2"><br><br>
+    <button id="add" onclick="calculateSum()">Add</button><br><br>
+    <p id="result"></p>
+    <script>
+        function calculateSum() {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            const sum = num1 + num2;
+            document.getElementById('result').innerText = 'Result:' + sum;
+        }
+    </script>
+</body>
+
+</html>
